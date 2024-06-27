@@ -1,7 +1,7 @@
 def send_email(message, recipient,*, sender="university.help@gmail.com"):
-    def is_valid_email(email):
+    def mail_valid(email):
         return "@" in email and (email.endswith(".com") or email.endswith(".ru") or email.endswith(".net"))
-    if not is_valid_email(sender) or not is_valid_email(recipient):
+    if not mail_valid(sender) or not mail_valid(recipient):
         print(f"Невозможно отправить письмо с адреса {sender} на адрес {recipient}")
     elif recipient == sender:
         print("Нельзя отправить письмо самому себе!")
